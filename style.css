@@ -271,8 +271,7 @@ body {
 .mobile-menu-btn span.active:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-
-/* slider */
+/* Slider */
 .hero-1 {
     position: relative;
     width: 100%;
@@ -295,6 +294,7 @@ body {
 
 .slide-content p {
     font-size: 1.3rem;
+    color: white;
 }
 
 .slider {
@@ -348,10 +348,9 @@ body {
 
 .slide-image img {
     width: 100%;
-    height: auto; /* Ensure it stretches to the bottom */
-    object-fit: cover; /* Maintain aspect ratio */
+    height: auto;
+    object-fit: cover;
     border-radius: 10px;
-
 }
 
 /* Navigation Buttons */
@@ -394,42 +393,47 @@ body {
 }
 
 .btn:active {
-    transform: scale(0.95); /* Shrinks slightly when clicked */
+    transform: scale(0.95);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+/* 🌟 Mobile Optimization */
+@media (max-width: 768px) {
     .slide {
         flex-direction: column;
         text-align: center;
-        padding: 20px;
+        padding: 15px;
+        height: 50vh;
+        background-size: cover; /* Stretches to fit */
+        background-position: center; /* Centers background */
+        background-repeat: no-repeat; /* Avoids repetition */
     }
 
     .slide-content {
-        max-width: 100%;
-        margin-top: 20px; /* Moves text down for mobile */
+        max-width: 90%; /* Ensures text is not too wide */
+        margin: 10px auto; /* Centers text properly */
     }
 
     .slide-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem; /* Smaller text on mobile */
+        margin-bottom: 10px;
     }
 
     .slide-content p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        line-height: 1.5;
     }
 
-
+    /* Hide Image on Mobile */
     .slide-image {
-        max-width: 90%;
-        margin-top: 20px;
+        display: none;
     }
 
-    .slide-image img {
-        height: 100%; /* Make it touch the bottom */
+    .btn {
+        font-size: 1rem; /* Smaller button */
+        padding: 10px 16px;
     }
 }
 
-/* slider end */
 
 /* Box Container */
 .box-container {
@@ -849,7 +853,6 @@ body {
 
 /* Section Title */
 .section-title {
-    font-size: 14px;
     color: red;
     text-transform: uppercase;
     font-weight: bold;
@@ -930,6 +933,7 @@ body {
 .description {
     font-size: 16px;
     font-weight: bold;
+    color: white;
 }
 
 /* Buttons */
@@ -957,6 +961,7 @@ body {
 }
 .btn:hover {
     opacity: 0.9;
+    background-color: #3AC3FF;
     transform: scale(1.05);
 }
 
@@ -1006,3 +1011,500 @@ body {
         transform: translateY(0);
     }
 }
+
+/* Footer Styling */
+footer {
+    background: #007b00;
+    color: white;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Logo Styling */
+.footer-logo {
+    position: absolute;
+    top: -40px;  /* Move it upwards to touch the top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: white; /* Ensure a clean cutout effect */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Add slight shadow for depth */
+}
+
+.footer-logo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%; /* Ensure the image itself is also circular */
+}
+
+/* Footer Content Layout */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Footer Section */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+.footer-section a {
+    color: rgb(255, 221, 0);
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.footer-section span {
+    color: red;
+}
+
+/* Footer Links */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: yellow;
+}
+
+/* Social Media Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: yellow;
+}
+
+/* Contact Info */
+.footer-section p i {
+    margin-right: 8px;
+    color: yellow;
+}
+
+/* Newsletter */
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.footer-section form button {
+    padding: 12px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.footer-section form button:hover {
+    background: darkred;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-bottom .designer {
+    color: red;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section form {
+        align-items: center;
+    }
+
+    .footer-section form input,
+    .footer-section form button {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        position: relative;
+    }
+}
+/* Footer End */
+
+/* Join Now Section */
+.join-now {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to right, #004d00, #007b00);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Animated Gradient Background */
+.join-now::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 70%);
+    animation: moveBackground 8s infinite linear;
+    z-index: 0;
+}
+
+/* Fade In Content */
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Heading */
+.join-now h2 {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    animation: slideIn 1.2s ease-in-out forwards;
+}
+
+.join-now h2 span {
+    color: red;
+}
+
+.join-now h2 .span1 {
+    color: #55CBFF;
+}
+
+/* Description */
+.join-now p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Join Now Button */
+.btn-join {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Button Hover Effect */
+.btn-join:hover {
+    background: darkred;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.6);
+}
+
+/* Background Animation */
+@keyframes moveBackground {
+    0% { transform: translateX(-50%) translateY(-50%); }
+    50% { transform: translateX(50%) translateY(50%); }
+    100% { transform: translateX(-50%) translateY(-50%); }
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide-in Heading */
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade-in Text */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .join-now {
+        height: auto;
+        padding: 60px 15px;
+    }
+
+    .join-now h2 {
+        font-size: 28px;
+    }
+
+    .join-now p {
+        font-size: 16px;
+    }
+
+    .btn-join {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+/* Join Now */
+
+/* commitee sytle */
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f8fa;
+    text-align: center;
+}
+
+.committee-section {
+    padding: 50px;
+}
+
+/* Badge */
+.badge {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading */
+h2 {
+    color: #222;
+    font-size: 28px;
+    margin: 10px 0;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Grid Layout */
+.committee-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Card Styling */
+.member-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Card Image */
+.member-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Card Hover Effect */
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.member-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Member Info */
+.member-info {
+    margin-top: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Button Styling */
+.full-list {
+    margin-top: 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.full-list:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .committee-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member-card {
+        width: 90%;
+    }
+}
+/* commitee sytle end */
+
+/* b2top */
+/* General Page Styling */
+
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.back-to-top:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* b2top */

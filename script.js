@@ -113,3 +113,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Auto Slide every 5 seconds
     setInterval(nextSlide, 5000);
 });
+
+
