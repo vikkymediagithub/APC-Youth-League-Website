@@ -272,6 +272,153 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* slider */
+.hero-1 {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide-content h1 {
+    font-size: 3rem; /* Increase size */
+    font-weight: bold; /* Make it bold */
+}
+
+.slide-content p {
+    font-size: 1.5rem; /* Increase paragraph size */
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+    background-image: url('/src/img/bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+    z-index: -1;
+}
+
+.slide-content {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    z-index: 2;
+}
+
+.slide-image {
+    flex: 1;
+    max-width: 50%; /* Increased for desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-image img {
+    width: 150%; /* Increased image size */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Button Styling */
+.btn {
+    background-color: red;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .slide {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .slide-content {
+        max-width: 100%;
+        margin-top: 20px; /* Moves text down for mobile */
+    }
+
+    .slide-content h1 {
+        font-size: 2rem;
+    }
+
+    .slide-content p {
+        font-size: 1.2rem;
+    }
+
+
+    .slide-image {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+}
+
+/* slider end */
+
 
 /* Hero Section */
 .hero {
