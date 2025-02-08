@@ -289,19 +289,22 @@ body {
 }
 
 .slide-content h1 {
-    font-size: 3rem; /* Increase size */
-    font-weight: bold; /* Make it bold */
+    font-size: 3.5rem; /* Bigger for emphasis */
+    font-weight: bold;
 }
 
 .slide-content p {
-    font-size: 1.5rem; /* Increase paragraph size */
+    font-size: 1.3rem;
 }
 
 .slider {
     display: flex;
     width: 300%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.8s ease-in-out;
+    animation: slideAnimation 15s infinite linear;
 }
+
+
 
 .slide {
     width: 100vw;
@@ -316,6 +319,7 @@ body {
     background-repeat: no-repeat;
     color: white;
     position: relative;
+    z-index: 1;
 }
 
 .slide::before {
@@ -325,7 +329,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background for better visibility */
     z-index: -1;
 }
 
@@ -338,16 +342,18 @@ body {
 
 .slide-image {
     flex: 1;
-    max-width: 50%; /* Increased for desktop */
+    max-width: 55%; 
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
 .slide-image img {
-    width: 150%; /* Increased image size */
-    height: auto;
+    width: 100%;
+    height: auto; /* Ensure it stretches to the bottom */
+    object-fit: cover; /* Maintain aspect ratio */
     border-radius: 10px;
+
 }
 
 /* Navigation Buttons */
@@ -380,13 +386,17 @@ body {
     border: none;
     cursor: pointer;
     font-size: 1.2rem;
-    transition: 0.3s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     border-radius: 5px;
 }
 
 .btn:hover {
     background-color: darkred;
     transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95); /* Shrinks slightly when clicked */
 }
 
 /* Responsive Design */
@@ -403,7 +413,7 @@ body {
     }
 
     .slide-content h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .slide-content p {
@@ -412,65 +422,16 @@ body {
 
 
     .slide-image {
-        max-width: 80%;
+        max-width: 90%;
         margin-top: 20px;
+    }
+
+    .slide-image img {
+        height: 100%; /* Make it touch the bottom */
     }
 }
 
 /* slider end */
-
-
-/* Hero Section */
-.hero {
-    position: relative;
-    padding: 8rem 0 4rem;
-    overflow: hidden; 
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-    url('/src/img/bg-2.jpg') center/cover no-repeat;
-}
-
-/* Dark overlay */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-}
-
-.hero-content {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    color: var(--white); 
-    z-index: 2;
-}
-
-.hero-text {
-    text-align: left;
-}
-
-.hero-text h1 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.hero-image img {
-    width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow);
-}
 
 /* Box Container */
 .box-container {
@@ -538,17 +499,6 @@ body {
     color: var(--text-color);
 }
 
-/* Hero Section Bottom Shape */
-.hero::after {
-    content: "";
-    position: absolute;
-    bottom: -10%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-top: 40vh solid white;
-    width: 120%;
-}
-
 /* Animation */
 @keyframes fadeInUp {
     from {
@@ -560,37 +510,6 @@ body {
         transform: translateY(0);
     }
 }
-
-
-
-
-@media (max-width: 767px) {
-    .hero {
-        padding: 6rem 0 3rem;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-text {
-        text-align: center;
-    }
-
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-    .hero-image {
-        order: -1; /* Move image above text on mobile */
-    }
-}
-
 
 .cta-button {
     display: inline-flex;
