@@ -61,6 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    function openNav() {
+        document.getElementById("sideNav").classList.add("active");
+    }
+
+    function closeNav() {
+        document.getElementById("sideNav").classList.remove("active");
+    }
+
     // Intersection Observer for animations
     const observerOptions = {
         threshold: 0.1,
