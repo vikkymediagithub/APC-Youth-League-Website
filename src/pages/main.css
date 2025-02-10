@@ -887,6 +887,92 @@ h1 {
 /* con end */
 
 
+/* Party Ideology Section */
+.party-ideology {
+    padding: 4rem 1rem;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Ideology Content */
+.ideology-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Image Section */
+.ideology-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+}
+
+/* Text Section */
+.ideology-text {
+    max-width: 600px;
+}
+
+/* Heading with Dot */
+.ideology-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: #222;
+}
+
+/* Dot Design */
+.ideology-text .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Paragraphs */
+.ideology-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ideology-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ideology-image img {
+        max-width: 100%;
+    }
+
+    .ideology-text h2 {
+        font-size: 2rem;
+        justify-content: center;
+    }
+
+    .ideology-text p {
+        font-size: 1rem;
+    }
+}
+/* Ideology ends */
+
+
 /* Footer Styling */
 footer {
     background: #007b00;
