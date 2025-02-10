@@ -570,152 +570,144 @@ body {
 }
 
 /* About Us */
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* About Us Section */
 .about-us {
     padding: 4rem 1rem;
-    background: #f8f9fa;
+    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
+/* Container */
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     max-width: 1200px;
-    gap: 2rem;
     width: 100%;
 }
 
+/* About Content */
 .about-content {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
-.about-image {
-    position: relative;
-    max-width: 450px;
-    animation: fadeInLeft 1s ease-in-out;
-}
-
+/* Image Section */
 .about-image img {
     width: 100%;
+    max-width: 500px;
     border-radius: 10px;
 }
 
-.members {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.members .icon {
-    font-size: 24px;
-    margin-right: 8px;
-    color: red;
-}
-
+/* Text Section */
 .about-text {
     max-width: 600px;
-    animation: fadeInRight 1s ease-in-out;
 }
 
-/* Ensure text is large and visible */
+/* Sub Title */
+.sub-title {
+    color: #DC2626;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Headings */
 .about-text h2 {
-    font-size: 2.5rem; /* Large for desktop */
+    font-size: 2rem;
     font-weight: bold;
     color: #222;
 }
 
+/* Paragraphs */
 .about-text p {
-    font-size: 1.25rem; /* Readable on desktop */
-    line-height: 1.6;
-    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 15px;
 }
 
-.intro {
-    color: red;
-    font-weight: bold;
-    font-size: 1.5rem;
+/* Features List */
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
 }
 
-.learn-more {
-    background: red;
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    font-size: 1rem;
+    color: #DC2626;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+.read-more {
+    background: #DC2626;
     color: white;
     padding: 12px 24px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s ease-in-out;
 }
 
-.learn-more:hover {
-    background: darkred;
+.read-more:hover {
+    background: #008FA0;
 }
 
-/* Animations */
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Mobile Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
         text-align: center;
     }
 
-    .about-image {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image img {
         max-width: 100%;
     }
 
     .about-text h2 {
-        font-size: 2rem; /* Adjusted for mobile */
+        font-size: 2rem;
     }
 
     .about-text p {
-        font-size: 1.1rem; /* Adjusted for mobile readability */
+        font-size: 1rem;
     }
 
-    .intro {
-        font-size: 1.3rem;
+    .features li {
+        font-size: 1rem;
     }
 
-    .learn-more {
+    .read-more {
         font-size: 1rem;
     }
 }
 
+/* End about us */
 
 /* Media Queries */
 @media (min-width: 768px) {

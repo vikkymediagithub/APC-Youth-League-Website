@@ -813,6 +813,79 @@ h1 {
 
 /* Banner End */
 
+/* con */
+
+/* Social Justice Section */
+.social-justice {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Heading */
+.social-justice h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+    border-left: 5px solid #ff3b3b;
+    padding-left: 15px;
+}
+
+/* List Styling */
+.social-justice ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-justice ul li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    background: #fafafa;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Checkmark Icon */
+.social-justice ul li::before {
+    content: '✔️';
+    font-size: 20px;
+    color: #ff3b3b;
+    margin-right: 12px;
+}
+
+/* Hover Effect */
+.social-justice ul li:hover {
+    background: #ffe6e6;
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-justice {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .social-justice h2 {
+        font-size: 22px;
+    }
+
+    .social-justice ul li {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+/* con end */
+
 
 /* Footer Styling */
 footer {
