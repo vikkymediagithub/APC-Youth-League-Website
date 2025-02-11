@@ -123,3 +123,48 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// mobileb nav
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+    const navLinks = document.querySelector(".nav-links");
+    const dropdownTriggers = document.querySelectorAll(".dropdown > .dropdown-trigger");
+
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenuBtn.classList.toggle("open");
+    });
+
+    // Handle dropdown click with smooth expand/collapse
+    dropdownTriggers.forEach(trigger => {
+        trigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            
+            let parent = trigger.parentElement;
+            let submenu = parent.querySelector(".dropdown-menu");
+
+            if (submenu.classList.contains("open")) {
+                submenu.classList.remove("open");
+                trigger.querySelector("svg").style.transform = "rotate(0deg)";
+            } else {
+                // Close all other dropdowns first
+                document.querySelectorAll(".dropdown-menu").forEach(menu => menu.classList.remove("open"));
+                document.querySelectorAll(".dropdown-trigger svg").forEach(icon => icon.style.transform = "rotate(0deg)");
+
+                submenu.classList.add("open");
+                trigger.querySelector("svg").style.transform = "rotate(180deg)";
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (event) => {
+        if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+            navLinks.classList.remove("active");
+            mobileMenuBtn.classList.remove("open");
+            document.querySelectorAll(".dropdown-menu").forEach(menu => menu.classList.remove("open"));
+            document.querySelectorAll(".dropdown-trigger svg").forEach(icon => icon.style.transform = "rotate(0deg)");
+        }
+    });
+});
+

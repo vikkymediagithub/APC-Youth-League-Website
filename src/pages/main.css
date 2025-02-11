@@ -544,85 +544,157 @@ body {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 /* Mobile menu styles */
-@media (max-width: 767px) {
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--white);
+@media (max-width: 768px) {
+    /* Hamburger Menu */
+    .mobile-menu-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        display: flex;
         flex-direction: column;
-        padding: 1rem;
-        box-shadow: var(--shadow);
-        gap: 1rem;
-        z-index: 100;
-        display: none; /* Hidden by default */
+        justify-content: space-around;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        width: 35px;
+        height: 4px;
+        background: black;
+        transition: all 0.3s ease-in-out;
+        border-radius: 2px;
+    }
+
+    /* Transform into a close icon */
+    .mobile-menu-btn.open span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.open span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
     }
 
     .dropdown-menu {
         position: static;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        box-shadow: none;
-        margin-top: 0.5rem;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-    }
-
-    .dropdown.active .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        max-height: 400px;
-    }
-
-    .dropdown-trigger {
-        justify-content: space-between;
-    }
-
-    .join-now-btn {
         width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+
+    /* Mobile Navigation */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        backdrop-filter: blur(12px);
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        gap: 25px;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
         text-align: center;
     }
 
-    .hero {
-        padding-top: 6rem; /* Adjust hero padding for mobile */
+    .nav-links a {
+        font-size: 22px;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+        padding: 10px;
+        font-weight: bold;
     }
 
-    .hero-text h1 {
-        font-size: 2rem; /* Smaller heading on mobile */
+    .nav-links a:hover {
+        color: #f39c12;
     }
 
-    .features-grid {
-        grid-template-columns: 1fr; /* Stack features on mobile */
+    /* Dropdown Styling */
+    .dropdown {
+        position: relative;
     }
-}
 
-/* Animation Keyframes */
-@keyframes slideDown {
-    from {
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}    
+
+.dropdown-menu li {
+    list-style: none;
 }
 
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 16px;
+    font-size: 16px;
     color: #333;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
 }
+
+.dropdown-menu li a:hover {
+    background: #007bff;
+    color: white;
+}
+
+    .dropdown-menu.open {
+        display: flex;
+    }
+
+    .dropdown-trigger svg {
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+/* Close Menu nav */
+/* close menu nav */
+
 
 /* About Section */
 .about-apc {
