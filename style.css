@@ -1606,38 +1606,9 @@ h4 {
 }
 /* commitee sytle end */
 
-/* b2top */
-/* General Page Styling */
-
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Hover Effect */
-.back-to-top:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
 
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* b2top */

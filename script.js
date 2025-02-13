@@ -168,3 +168,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// ideology
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".sidebar ul li a");
+    const panels = document.querySelectorAll(".content-panel");
+
+    links.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Remove active class from all links
+            links.forEach(item => item.classList.remove("active"));
+            this.classList.add("active");
+
+            // Hide all panels
+            panels.forEach(panel => {
+                panel.classList.remove("active");
+                panel.style.left = "100%"; // Move out of view
+            });
+
+            // Show the selected panel
+            const targetPanel = document.getElementById(this.dataset.target);
+            if (targetPanel) {
+                targetPanel.classList.add("active");
+                targetPanel.style.left = "0"; // Move into view
+            }
+        });
+    });
+});
+
+
