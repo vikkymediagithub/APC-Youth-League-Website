@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/style.css">
     <!-- swipper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- SweetAlert css -->
+    <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.16.0/dist/sweetalert2.min.css " rel="stylesheet">
 </head>
 
 <body>
@@ -307,16 +309,16 @@
                     </div>
                     <div class="footer-section contact">
                         <h3>Contact Info:</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> No. 2 IBM Haruna Street, Utako, Abuja</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 40 Blantyre street, Wuse, Abuja</p>
                         <p><i class="fas fa-phone"></i> +234 8110 779 979</p>
                         <p><i class="fas fa-envelope"></i> contact@apcyouthleague.ng</p>
                     </div>
                     <div class="footer-section newsletter">
                         <h3>Newsletter</h3>
-                        <form>
-                            <input type="text" placeholder="Name*" required>
-                            <input type="email" placeholder="Email*" required>
-                            <button type="submit">Subscribe</button>
+                        <form id="newsletter-form">
+                            <input type="text" id="name"  placeholder="Name*">
+                            <input type="email" id="email" placeholder="Email*">
+                            <button type="submit" id="subscribe">Subscribe</button>
                         </form>
                     </div>
                 </div>
@@ -337,6 +339,11 @@
     <script>
         gsap.from(".member-card", {opacity: 0, y: 50, duration: 1, stagger: 0.3});
     </script>
+
+    <!-- Alert Script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.16.0/dist/sweetalert2.all.min.js "></script>
+
 </body>
 
 </html>

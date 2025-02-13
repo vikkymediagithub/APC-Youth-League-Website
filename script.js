@@ -198,3 +198,41 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Newsletter js for form validation
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (!name || !email) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'All fields are required.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+        return;
+    }
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!emailPattern.test(email)) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please enter a valid email address.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+        return;
+    }
+
+    Swal.fire({
+        title: 'Subscribed!',
+        text: 'You have successfully subscribed to our newsletter.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    }).then(() => {
+        document.getElementById('newsletter-form').reset();
+        location.reload();
+    });
+});
